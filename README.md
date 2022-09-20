@@ -61,6 +61,18 @@ Run the following command on the PC where you will do the analysis of the data. 
 
 	scp openhabian@OPENHAB_IP:/home/openhabian/resultAprilMai.json .
 
+#### Export Data from Discovergy
+
+The original project https://github.com/PV-Soft/Battery-Simulation used an unspecified json export from openHab.
+
+This modification uses the CSV-Export of discovergy.com smartmeter, with 15minute time periods, but time periods are flexible.
+There is a little glitch with daylight saving time switches, but with 3kWh in my case, this has no impact.
+The input data has to be in some format, containing a timestamp and the power, where incoming energy from the grid is positive and outgoing export is negative.
+
+If some values are irritating high or low, please check the format of the timestamp in your raw data.
+
+If runtime is too long, reduze the amount of batteries to simulate in battery_sizes and battery_names.
+
 #### Record Data with Python Script
 
 *Todo: Provide python script to record data and store it in a txt file.*
